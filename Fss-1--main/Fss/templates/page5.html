@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-Day Workout Plan</title>
+
+    <!-- Fonts and Stylesheets -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+            font-size: 36px;
+            letter-spacing: 1px;
+        }
+
+        .workout-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .day-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Remove underline and blue color on hover */
+        a {
+            text-decoration: none;
+            color: inherit; /* Keeps the original text color */
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: inherit; /* Prevents color change on hover */
+        }
+
+        /* Workout Card Styles */
+        .workout-card {
+            background-color: #fff;
+            height: 270px;
+            padding-top: 60px;
+            padding-right: 30px;
+            padding-bottom: 20px;
+            padding-left: 30px;
+
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .workout-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .workout-card h2 {
+            font-size: 24px;
+            margin: 15px 0 5px;
+            color: #4CAF50;
+        }
+
+        .workout-card h3 {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .workout-card p {
+            font-size: 16px;
+            color: #888;
+            margin: 5px 0;
+        }
+
+        /* Hover Effects */
+        .workout-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .workout-card:hover h2 {
+            color: #333;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            h1 {
+                font-size: 24px;
+                margin-top: 10px;
+            }
+
+            .day-columns {
+                gap: 10px;
+            }
+
+            .workout-card {
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="workout-container">
+        <h1 class="animate__animated animate__fadeInDown">4-Day Workout Plan</h1><br><br>
+        <div class="day-columns">
+            <!-- Day 1 -->
+            <div class="day-column">
+                <a href="/D1">
+                <div class="workout-card animate__animated animate__fadeInUp">
+                  
+                    <h2>Day 1</h2>
+                    <h3>Chest & Triceps</h3>
+                    <p>Exercises: 16</p>
+                    <p>Duration: 20 mins</p>
+                </div></a>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="day-column">
+                <a href="/D2">
+                <div class="workout-card animate__animated animate__fadeInUp">
+                    
+                    <h2>Day 2</h2>
+                    <h3>Arms & Lat</h3>
+                    <p>Exercises: 19</p>
+                    <p>Duration: 17 mins</p>
+                </div></a>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="day-column">
+                <a href="/D3">
+                <div class="workout-card animate__animated animate__fadeInUp">
+                   
+                    <h2>Day 3</h2>
+                    <h3>Legs</h3>
+                    <p>Exercises: 23</p>
+                    <p>Duration: 26 mins</p>
+                </div></a>
+            </div>
+
+            <!-- Day 4 -->
+            <div class="day-column">
+                <a href="/D4">
+                <div class="workout-card animate__animated animate__fadeInUp">
+                   
+                    <h2>Day 4</h2>
+                    <h3>Chest & Triceps</h3>
+                    <p>Exercises: 16</p>
+                    <p>Duration: 20 mins</p>
+                </div></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- GSAP Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script>
+        gsap.from(".workout-card", { duration: 1, y: 100, opacity: 0, stagger: 0.2, ease: "power2.out" });
+    </script>
+</body>
+</html>

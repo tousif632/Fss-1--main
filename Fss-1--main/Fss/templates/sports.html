@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Routine</title>
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        .navbar-brand, .navbar-nav li a {
+            color: #fff !important;
+            font-size: 18px;
+        }
+
+        .navbar-brand:hover, .navbar-nav li a:hover {
+            color: #4CAF50 !important;
+        }
+
+        .navbar-nav li.active a {
+            background-color: #4CAF50 !important;
+            color: white !important;
+        }
+
+        /* Main Heading */
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            color: #4CAF50;
+            font-size: 36px;
+        }
+
+        /* Form Styling */
+        .navbar form {
+            padding: 15px;
+            text-align: center;
+            background-color: #fff;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        select {
+            padding: 10px;
+            width: 200px;
+            margin-right: 20px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Routine Styling */
+        .routine {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .exercise {
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #333;
+            font-size: 20px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .ele {
+            padding-left: 10px;
+            margin: 5px 0;
+        }
+
+        /* Media Queries */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            select, input[type="submit"] {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .routine {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+
+    <!-- Main Heading -->
+    <h1>Sports  Routine</h1>
+<br><br>
+    <!-- Fitness Level Form -->
+    <div class="navbar">
+        <form method="POST">
+            <label for="fitness_level">Select your fitness level:</label>
+            <select name="fitness_level" id="fitness_level" required>
+                <option value="">--Select--</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+            <input type="submit" value="Generate Routine">
+        </form>
+    </div>
+
+  
+    {% if routine %}
+    <div class="routine">
+        <h2>Fitness Routine for {{ request.form.get('fitness_level').capitalize() }} Level:</h2>
+
+        <!-- Strength Training Section -->
+        <div class="exercise">
+            <h3>Strength Training:</h3>
+            {% for exercise in routine['strength'] %}
+                <p class="ele">- {{ exercise['exercise'] }}: 
+                    {% if 'duration' in exercise %}
+                        {{ exercise['duration'] }}
+                    {% else %}
+                        {{ exercise['sets'] }} sets of {{ exercise['reps'] }} reps
+                    {% endif %}
+                </p>
+            {% endfor %}
+        </div>
+
+        <!-- Cardio Section -->
+        <div class="exercise">
+            <h3>Cardio:</h3>
+            {% for exercise in routine['cardio'] %}
+                <p class="ele">- {{ exercise['exercise'] }}: {{ exercise['duration'] }}</p>
+            {% endfor %}
+        </div>
+
+        <!-- Flexibility Section -->
+        <div class="exercise">
+            <h3>Flexibility:</h3>
+            {% for exercise in routine['flexibility'] %}
+                <p class="ele">- {{ exercise['exercise'] }}: {{ exercise['duration'] }}</p>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+</body>
+</html>

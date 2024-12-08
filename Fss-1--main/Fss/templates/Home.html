@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+
+
+/* Add this CSS for the logo */
+.logo-img {
+    height: 50%; /* Adjust the size of the logo */
+    
+}
+
+/* Existing CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.auth-buttons a {
+    margin-left: 15px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.auth-buttons .login-btn {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #333;
+    font-size: 1.2rem; /* Increased font size */
+}
+
+.auth-buttons .login-btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.auth-buttons .start-now-btn {
+    background-color: #a8e061;
+    color: #333;
+    font-size: 1.2rem; /* Increased font size */
+}
+
+.auth-buttons .start-now-btn:hover {
+    background-color: #8bc34a;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px; /* Increased padding */
+    background-color: #fff;
+    flex-wrap: wrap;
+    min-height: 89vh;
+    width: 99vw;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+}
+
+.text-container {
+    max-width: 50%;
+    flex: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem; /* Increased heading size */
+    color: #111;
+    font-weight: bold; /* Make the heading bold */
+    margin-bottom: 20px;
+}
+
+.hero p {
+    margin-top: 20px;
+    color: #333; /* Darker color for better contrast */
+    font-size: 1.5rem; /* Increased paragraph font size */
+    line-height: 1.5;
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: #a8e061;
+    color: #fff;
+    padding: 20px 40px; /* Increased button padding */
+    border-radius: 50px;
+    text-decoration: none;
+    margin-top: 30px;
+    font-size: 1.2rem; /* Increased button text size */
+    font-weight: bold; /* Make button text bold */
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #8bc34a;
+}
+
+.quiz-info {
+    margin-top: 20px;
+    font-size: 1.2rem; /* Increased quiz info font size */
+    color: #555;
+}
+
+.phone-mockup {
+    position: relative;
+    max-width: 40%;
+    margin-left: 20px;
+    flex: 1;
+}
+
+.phone-mockup img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.overlay-text {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem; /* Increased overlay text font size */
+    color: #333;
+    font-weight: bold; /* Make overlay text bold */
+    text-align: center;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+}
+
+.feature {
+    text-align: center;
+    max-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+}
+
+.feature i {
+    font-size: 3rem;
+    color: #a8e061;
+    margin-bottom: 20px;
+}
+
+.feature h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {vertical-align: middle;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .text-container, .phone-mockup {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .phone-mockup {
+        margin-top: 20px;
+    }
+
+    .hero h1 {margin-bottom: 5px;
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .cta-btn {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+
+    .quiz-info {
+        font-size: 1rem;
+    }
+
+    .overlay-text {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature {
+        margin-bottom: 20px;
+    }
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FITAI - Your AI-powered Fitness Coach</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h3>FitYou</h3>
+            </div>
+            <div class="auth-buttons">
+                <a href="/sport" class="login-btn animate__animated animate__fadeIn">Sport Sheduler</a>
+                <a href="/diet" class="start-now-btn animate__animated animate__fadeIn">Get your diet plan</a>
+                <a href="/workout" class="login-btn animate__animated animate__fadeIn">workout</a>
+                <a href="/gen" class="start-now-btn animate__animated animate__fadeIn">Personalized Routine</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="text-container animate__animated animate__fadeInLeft">
+                <h1>Your fitness coach</h1>
+                <p>With the fitAi Coach workout app, you get a personalized fitness program that gets real results.</p>
+                <a href="/gen" class="cta-btn animate__animated animate__pulse">Get your workout plan now</a>
+                <p class="quiz-info animate__animated animate__fadeInUp">Take the FREE quiz to get personalized exercises!</p>
+            </div>
+            <div class="phone-mockup animate__animated animate__fadeInRight">
+                <div class="overlay-text animate__animated animate__fadeInUp">
+                    <p>Your fitness program is ready. Are you?</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature animate__animated animate__fadeInUp">
+                <i class="fas fa-dumbbell"></i>
+                <h2>Personalized Workouts</h2>
+                <p>Tailored exercises based on your fitness level and goals.</p>
+            </div>
+            <div class="feature animate__animated animate__fadeInUp">
+                <i class="fas fa-chart-line"></i>
+                <h2>Progress Tracking</h2>
+                <p>Monitor your progress and see real results over time.</p>
+            </div>
+            <div class="feature animate__animated animate__fadeInUp">
+                <i class="fas fa-heartbeat"></i>
+                <h2>Health Tips</h2>
+                <p>Get expert advice on nutrition and lifestyle.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2069 FITAI. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script>
+        gsap.from(".logo-img", { duration: 1, y: -100, opacity: 0, ease: "bounce" });
+        gsap.from(".auth-buttons a", { duration: 1, x: -100, opacity: 0, stagger: 0.2 });
+        gsap.from(".text-container", { duration: 1, x: -100, opacity: 0, ease: "power2.out" });
+        gsap.from(".phone-mockup", { duration: 1, x: 100, opacity: 0, ease: "power2.out" });
+        gsap.from(".features .feature", { duration: 1, y: 100, opacity: 0, stagger: 0.2, ease: "power2.out" });
+    </script>
+</body>
+</html>
